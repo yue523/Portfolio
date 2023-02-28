@@ -1,10 +1,20 @@
 const express = require('express');
 const app = express();
 
+// Set the views directory
+app.set('views', './views');
+
+// Set the view engine
+app.set('view engine', 'ejs');
+
+// Define the index route
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  // Render the index view
+  res.render('index', { title: 'Express' });
 });
 
-app.listen(3000, () => {
-  console.log('App listening on port 3000');
+// Start the server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
