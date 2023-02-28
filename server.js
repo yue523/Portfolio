@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+
+
+// publicを参照
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set the views directory
 app.set('views', './views');
