@@ -1,3 +1,6 @@
+// http モジュールの読み込み
+const http = require('http');
+
 // Express モジュールの読み込み
 const express = require('express');
 
@@ -21,8 +24,11 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
+// httpサーバーの生成
+const server = http.createServer(app);
+
 // サーバーの起動
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
