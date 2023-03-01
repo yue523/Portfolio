@@ -1,8 +1,16 @@
+# Docker Compose のバージョン指定
 version: '3'
+
+# サービスの定義
 services:
+  # アプリケーションの定義
   app:
+    # コンテナ名の指定
     container_name: my-app
+    # 常に再起動するように指定
     restart: always
+    # Dockerfile のパスを指定してビルド
     build: .
+    # ポートのマッピング
     ports:
       - "3000:3000"

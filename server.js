@@ -1,24 +1,27 @@
+// Express モジュールの読み込み
 const express = require('express');
+
+// Express アプリケーションの生成
 const app = express();
+
+// パス操作のためのモジュールの読み込み
 const path = require('path');
 
-
-// publicを参照
+// 静的ファイルの提供
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set the views directory
+// ビューの設定
 app.set('views', './views');
 
-// Set the view engine
+// テンプレートエンジンの設定
 app.set('view engine', 'ejs');
 
-// Define the index route
+// ルートへのアクセス処理
 app.get('/', (req, res) => {
-  // Render the index view
   res.render('index', { title: 'Express' });
 });
 
-// Start the server
+// サーバーの起動
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
