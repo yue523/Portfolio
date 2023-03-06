@@ -12,7 +12,7 @@ This is a sample Node.js application built with Docker.
 1. Clone this repository:
 
    ```sh
-   $ git clone https://github.com/example/node-docker-app.git
+   $ git clone https://github.com/yue523/portfolio
    $ cd node-docker-app
    ```
 
